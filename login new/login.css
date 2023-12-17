@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-family: sans-serif;
     background-color: #08090b;
@@ -127,9 +127,12 @@ input[type="submit"]:hover {
 
 .navigation {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
-    align-self: flex-start;
     margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
 }
 
 .navigation button {
