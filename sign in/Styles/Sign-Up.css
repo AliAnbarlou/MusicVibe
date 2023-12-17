@@ -1,20 +1,90 @@
+@font-face {
+    font-family: Poppins_Bold;
+    src: url(../Fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family: Poppins_Regular;
+    src: url(../Fonts/Poppins-Medium.ttf);
+}
+* {
+    font-family: Poppins_Regular;
+}
 body {
     margin: 0px;
-    background-image: url(../Image/pexels-shovan-datta-6420656.jpg);
-    background-size: cover;
 }
 main {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+h2 , #MusicVibeSpan {
+    font-size: 5.5rem;
+    font-weight:900;
+    font-family: Poppins_Bold;
+    text-align: center;
+}
+#MusicVibeSpan {
+    color: #3acaff;
 }
 form {
-    width: max-content;
-    background-color: white;
-    padding: 18px 25px;
+    width: 45%;
+    height: 100vh;
+    padding: 0px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 85px auto;
-    border-radius: 8px;
-    box-shadow: 0px 0px 25px #00ff9187;
-
+    background-color: white;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.283);
+}
+.headset-img {
+    width: 55%;
+    height: 100vh;
+    background-image: url(../Image/MusicVibe.png);
+    background-size: cover;
+}
+input {
+    width: 100%;
+    margin: 10px 0px;
+    outline: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: #5e5f60;
+    background-color: transparent;
+    padding: 8px 0px;
+    transition: 0.9s;
+    font-size: 1rem;
+}
+input:focus {
+    border-color: #3acaff;
+}
+input:focus::placeholder {
+    color: #3acaff;
+}
+.btn {
+    width: 70%;
+    margin: 35px auto;
+}
+button {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #06a053;
+    background-color:white;
+    color: #06a053;
+    transition: 0.6s;
+}
+button:hover {
+    background-color: #06a053;
+    color: white;
+}
+#Sign-In-Link {
+    margin: auto 0px;
+    font-size: 1.2rem;
+}
+#Sign-In-Link a {
+    color: #06a053;
+    text-decoration: none;
+}
+#Sign-In-Link a:hover {
+    text-decoration: underline;
 }
