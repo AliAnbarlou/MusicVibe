@@ -34,7 +34,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.283);
 }
 .headset-img {
