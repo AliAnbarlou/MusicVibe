@@ -8,6 +8,7 @@
 }
 * {
     font-family: Poppins_Regular;
+    box-sizing: border-box;
 }
 body {
     margin: 0px;
@@ -87,4 +88,41 @@ button:hover {
 }
 #Sign-In-Link a:hover {
     text-decoration: underline;
+}
+@media only screen and (max-width: 768px){
+    body {
+        width: 100%;
+    }
+    form {
+        width: 100% !important;
+        padding: 15px;
+        margin: 0px auto;
+    }
+    .inputs {
+        margin: auto 0px;
+    }
+    input {
+        font-size: 0.7rem;
+    }
+    h2 , #MusicVibeSpan {
+        font-size: 3.2rem !important;
+        font-weight:900;
+    }
+    #Sign-In-Link {
+        font-size: 1rem;
+    }
+    .headset-img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 1024px){
+    form {
+        width: 50%;
+    }
+    h2 , #MusicVibeSpan {
+        font-size: 4rem;
+    }
+    .headset-img {
+        width: 50%;
+    }
 }
