@@ -1,0 +1,16 @@
+* {
+  color: #f8f8f2;
+}
+body {
+  background-color: #282a36;
+  .card {
+    background-color: #44475a;
+    .card-body {
+      .card-image {
+        -o-object-fit: cover;
+        object-fit: cover;
+        max-height: 350px;
+      }
+    }
+  }
+}
