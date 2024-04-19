@@ -12,7 +12,7 @@ git clone https://github.com/AliAnbarlou/MusicVibe.git
 ```
 ## Navigate to the project directory and activate the virtual environment:
 ```bash
-cd django-music-website
+cd MusicVibe
 python -m venv env
 source env/bin/activate  # for Unix-based systems
 .\env\Scripts\activate   # for Windows
