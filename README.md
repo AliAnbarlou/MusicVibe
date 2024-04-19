@@ -9,7 +9,7 @@ This project is a simple music website developed using the Django framework. The
 
 ```bash
 git clone https://github.com/AliAnbarlou/MusicVibe.git
-‍‍‍‍```
+```
 ## Navigate to the project directory and activate the virtual environment:
 ```bash
 cd django-music-website
