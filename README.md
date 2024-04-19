@@ -33,23 +33,23 @@ Your website is now accessible at http://localhost:8000/.
 #### Important Note
 Due to security reasons and site activation, configuration files and database are not available in Github, if you have the necessary experience, create and place them yourself.
 ## Main Features
-1.Management of songs, albums, and more.
-2.Ability to add, edit, and delete various items by site administrators.
--Detailed statistics and charts using django-admin-chart and django-admin-tools-stats.
--Integration with django-taggit for tagging items.
--Image handling using Pillow.
--Database configuration using dj-database-url and python-dotenv for environment variables.
--PostgreSQL database backend using psycopg2-binary.
+- Management of songs, albums, and more.
+- Ability to add, edit, and delete various items by site administrators.
+- Detailed statistics and charts using django-admin-chart and django-admin-tools-stats.
+- Integration with django-taggit for tagging items.
+- Image handling using Pillow.
+- Database configuration using dj-database-url and python-dotenv for environment variables.
+- PostgreSQL database backend using psycopg2-binary.
 ## Dependencies
--Django
--django-taggit
--django-admin-chart
--django-admin-charts
--django-admin-tools
--django-admin-tools-stats
--django-hitcount
--django-jazzmin
--Pillow
--dj-database-url
--python-dotenv
--psycopg2-binary
+- Django
+- django-taggit
+- django-admin-chart
+- django-admin-charts
+- django-admin-tools
+- django-admin-tools-stats
+- django-hitcount
+- django-jazzmin
+- Pillow
+- dj-database-url
+- python-dotenv
+- psycopg2-binary
