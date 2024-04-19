@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/error.css' %}">
+{% endblock head %}
+{% block title %}Music Vibe - Something wents wrong{% endblock title %}
+{% block content %}
+    <div class="text-light main">
+      <div
+        class="col-12 col-md-5 mx-auto text-center d-flex flex-column gap-4 rounded p-5 parent"
+      >
+        <h2>some thing went wrong</h2>
+        <img
+          src="{% static 'icon/no-found.gif' %}"
+          alt="Error 404"
+          class="mx-auto py-3 image"
+        />
+        <div class="d-block">
+          <a href="{% url 'home' %}" class="link d-inline">Main Page</a>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

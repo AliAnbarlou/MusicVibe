@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/dani.css'%}">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Listen To The Real Music - MusicVibe">
+    <meta property="og:title" content="Music Vibe">
+    <meta property="og:url" content="https://music-vibe.com">
+    <script>
+        !function(e,t,n){e.yektanetAnalyticsObject=n,e[n]=e[n]||function(){e[n].q.push(arguments)},e[n].q=e[n].q||[];var a=t.getElementsByTagName("head")[0],r=new Date,c="https://cdn.yektanet.com/superscript/WaDFfMQ0/native-music-vibe.com-36997/yn_pub.js?v="+r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),s=t.createElement("link");s.rel="preload",s.as="script",s.href=c,a.appendChild(s);var l=t.createElement("script");l.async=!0,l.src=c,a.appendChild(l)}(window,document,"yektanet");
+    </script>
+    <meta property="og:image" content="{% static 'icon/MV-logo.png'%}">
+{% endblock head %}
+{% block title%}
+    Danial Zarepour - Music Vibe
+{% endblock title%}
+{% block content %}
+<h2>Say Hi to the biggest gay in the world</h2>
+<p>تریدر هست(تریدری؟)</p>
+<h3>Here are some photos of Danial Zarepour</h3>
+<br>
+<p>پولشو ندادن</p>
+<img src="{% static 'dani/1.jpg'%}" alt="Danial Zarepour"><br>
+<p>گنگ از پشت</p>
+
+<img src="{% static 'dani/2.jpg'%}" alt="Danial Zarepour"><br>
+<p>خواب</p>
+
+<img src="{% static 'dani/3.jpg'%}" alt="Danial Zarepour sleeping"><br>
+<p>اعتراض</p>
+
+<img src="{% static 'dani/4.jpg'%}" alt="Danial Zarepour"><br>
+<p>خواب دوباره</p>
+
+<img src="{% static 'dani/5.jpg'%}" alt="Danial Zarepour"><br>
+<p>بعد از میکاپ</p>
+
+<img src="{% static 'dani/6.jpg'%}" alt="Danial Zarepour"><br>
+<p>در حمام</p>
+
+<img src="{% static 'dani/7.jpg'%}" alt="Danial Zarepour in the shower"><br>
+
+<div id="pos-article-text-95676"></div>
+{% endblock %}

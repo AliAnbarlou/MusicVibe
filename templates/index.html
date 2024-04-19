@@ -1,0 +1,489 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/indexstyle.css' %}">
+    <meta name="robots" content="follow, index">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Discover exclusive and trending music digitally on the MusicVibe platform, from all over the world and genres">
+    <meta property="og:title" content="Music Vibe"/>
+    <meta property="og:url" content="https://music-vibe.com"/>
+    <meta property="og:type" content="music.song" />
+    <meta property="og:type" content="music.album" />
+
+    <meta property="og:image" content="{% static 'icon/MV-logo.png'%}"/>
+{% endblock head %}
+{% block title%}
+Music Vibe
+{% endblock title%}
+{% block content %}
+<!-- hero start -->
+<div class="hero">
+    <div class="hero-paragraphs">
+        <div class="title">
+            <h2>MusicVibe</h2>
+        </div>
+        <div class="stable-paragraph">
+            <p>Listen To Real Music:</p>
+        </div>
+        <div class="dynamic-paragraph">
+            <p class="dynamic-text"></p>
+        </div>
+    </div>
+    <div class="dynamic-atrist-imgs">
+        <div class="base-artist-img"></div>
+        <div class="blur-artist-img"></div>
+    </div>
+</div>
+<!-- end hero -->
+<br><br><br>
+<div class="d-flex flex-column container">
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>All</h2>
+        <a href="{% url 'all_page'%}">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash">
+        <div class="box">
+            <ul class="slider">
+                {% for post in recent_posts %}
+                <li>
+                    <div>
+                        <a href="{% url 'det' post.id%}" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{{post.image.url}}" class="loading-image" alt="{{post.title}} music" title="{{post.title}}">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>{{post.title}}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--all end-->
+    <!--Genres-->
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>Genres</h2>
+        <a href="{% url 'geners'%}">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash">
+        <div class="box">
+            <ul class="slider2">
+                <li>
+                    <div>
+                        <a href="/all/geners/Classic/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/classic2.jpg' %}" class="loading-image" alt="Classic Music" title="Classic Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Classic</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--Item 1 end-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Pop/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/pop3.jpg' %}" class="loading-image" style="background-color: red;" alt="pop Music" title="Pop Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Pop</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 2-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Rap/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/rap2.jpg' %}" class="loading-image" alt="rao Music" title="Rap Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Rap</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 3-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Soundtrack/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/soundtrack3.jpg' %}" class="loading-image" alt="Soundtrack Music" title="Soundtrack Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Soundtrack</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 4-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Rock/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/rock2.jpg' %}" class="loading-image" alt="Rock Music" title="Rock Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Rock</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 5-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Relaxing/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/relaxing3.jpg' %}" class="loading-image" alt="relaxing Music" title="relaxing Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Relaxing</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 6-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Traditional/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/tred.jpg' %}" class="loading-image" alt="traditional Music" title="Traditional Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Traditional</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 7-->
+                <li>
+                    <div>
+                        <a href="/all/geners/Jazz/" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{% static 'img/Geners/jazz2.webp' %}" class="loading-image" alt="Jazz Music" title="Jazz Music">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>Jazz</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                <!--end item 8-->
+            </ul>
+        </div>
+    </div>
+    <!--genres end-->
+    <!--Start artists-->
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>Artists</h2>
+        <a href="{% url 'artists'%}">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash">
+        <div class="box">
+            <ul class="slider">
+                {% for post in artist_results %}
+                <li>
+                    <div>
+                        <a href="{% url 'artist_details' post.id%}" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{{post.picture.url}}" class="loading-image" alt="{{post.name}}" title="{{post.name}}">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>{{post.name}}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!--end of artists-->
+    <!-- pop posts start-->
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>Pop</h2>
+        <a href="/all/geners/Pop/">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash">
+        <div class="box">
+            <ul class="slider">
+                {% for post in pop_posts %}
+                <li>
+                    <div>
+                        <a href="{% url 'det' post.id%}" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{{post.image.url}}" class="loading-image" alt="{{post.title}} music" title="{{post.title}}">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>{{post.title}}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- end pop post -->
+    <!-- rap posts start -->
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>Rap</h2>
+        <a href="/all/geners/Rap/">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash">
+        <div class="box">
+            <ul class="slider">
+            {% for post in rap_posts %}
+                <li>
+                    <div>
+                        <a href="{% url 'det' post.id%}" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{{post.image.url}}" class="loading-image" alt="{{post.title}} music" title="{{post.title}}">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>{{post.title}}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- rap posts end -->
+    <!-- techno posts start -->
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>Techno</h2>
+        <a href="/all/geners/Techno/">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash">
+        <div class="box">
+            <ul class="slider">
+            {% for post in techno_posts %}
+                <li>
+                    <div>
+                        <a href="{% url 'det' post.id%}" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{{post.image.url}}" class="loading-image" alt="{{post.title}} music" title="{{post.title}}">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>{{post.title}}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <!-- techno posts end -->
+    <!-- classic posts start -->
+    <div class="daste d-flex flex-row w-100 justify-content-between my-4">
+        <h2>Classic</h2>
+        <a href="/all/geners/Classic/">
+            <button class="btn-more d-flex flex-row align-items-center justify-content-center">
+                More
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        </a>
+    </div>
+    <div class="w-100 d-flex container dash"  style="border:none;">
+        <div class="box">
+            <ul class="slider">
+            {% for post in classic_posts %}
+                <li>
+                    <div>
+                        <a href="{% url 'det' post.id%}" class="text-decoration-none">
+                            <div class="music-list-child">
+                                <div class="music-list-img d-flex align-items-center justify-content-center">
+                                    <div>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <img src="{{post.image.url}}" class="loading-image" alt="{{post.title}} music" title="{{post.title}}">
+                                </div>
+                                <div class="music-list-title">
+                                    <h3>{{post.title}}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </li>  
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- classic posts end -->
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock content %}

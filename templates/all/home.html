@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static%}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/indexstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/geners.css' %}" >
+    <meta name="robots" content="follow, index">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="All musics - MusicVibe">
+{% endblock head %}
+{% block title %}Music Vibe - All Musics{% endblock title %}
+{% block content %}
+<div class="music-gener-parent">
+        {% for i in postsindb %}
+        <a href="{% url 'det' i.id%}" class="music-gener-child">
+            <div class="gener-img">
+                <img src="{{i.image.url}}" alt="{{ i.title }} music" title="{{ i.title }}">
+            </div>
+            <div class="gener-title">
+                <h2>{{ i.title }}</h2>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    
+<!--
+    {% for tag_info in tags_with_posts %}
+    <h2>{{ tag_info.tag.name }}</h2>
+    <ul>
+        {% for post in tag_info.posts %}
+            <li>{{ post.title }}</li>
+        {% endfor %}
+    </ul>
+    {% empty %}
+        <p>No tags found.</p>
+    {% endfor %}
+
+{% endblock content %}-->

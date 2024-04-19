@@ -1,0 +1,190 @@
+/* =============== GOOGLE FONTS =============== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /* ========== Colors ==========*/
+  /* Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(50, 88%, 47%);
+  --dark-color: hsl(0, 0%, 24%);
+  --title-color: hsl(0, 0%, 13%);
+  --text-color-light: hsl(0, 0%, 0%);
+  --white-color: #000000;
+  --body-color: hsl(0, 0%, 0%);
+  /*========== Font and typography ==========*/
+  /* .5rem = 8px | 1rem = 16px ... */
+  --body-font: "Poppins", sans-serif;
+  --small-font-size: 0.813rem;
+  font-weight: bolder;
+}
+@media screen and (min-width: 968px) {
+  :root {
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html::-webkit-scrollbar {
+    width: 8px;
+    background-color: #222222
+}
+html::-webkit-scrollbar-thumb {
+    width: 8px;
+    height: 10%;
+    background-color: #787878b1;
+    border-radius: 12px;
+}
+html::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+body {
+  background-color: var(--body-color);
+}
+header {
+  z-index: 900;
+}
+#logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/*=============== SEARCH ===============*/
+.contain {
+  position: relative;
+  margin: 4px 2px;
+  height: 50px;
+  width: 50px;
+  vertical-align: bottom;
+  place-items: center;
+}
+a {
+  text-decoration: none !important;
+}
+.search {
+  position: relative;
+  width: 67px;
+  height: 56px;
+  background-color: var(--white-color);
+  box-shadow: 0 4px 24px hsla(222, 68%, 12%, 0.1);
+  border-radius: 4rem;
+  padding: 10px;
+  overflow: hidden;
+  transition: width 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__input {
+  border: none;
+  outline: none;
+  width: 100%;
+  border-radius: 4rem;
+  padding-left: 14px;
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  opacity: 0;
+  height: 100%;
+  transition: opacity 1.5s;
+}
+
+.search__button {
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__icon,
+.search__close {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  position: absolute;
+  transition: opacity 0.5s cubic-bezier(0.9, 0, 0.3, 0.9);
+}
+.search__close {
+  opacity: 0;
+}
+
+/* Search animated */
+.show-search {
+  width: 190px;
+}
+.show-search .search__input {
+  opacity: 1;
+  pointer-events: initial;
+}
+.show-search .search__button {
+  transform: rotate(90deg);
+}
+.show-search .search__icon {
+  opacity: 0;
+}
+.show-search .search__close {
+  opacity: 1;
+}
+.nav-item {
+  list-style-type: none !important;
+  cursor: pointer;
+  font-size: 1.85rem !important;
+  transition: all 1s;
+  
+}
+.nav-item a{
+  color: white !important;
+}
+.nav-item a:hover{
+  color: #009eff !important;
+}
+.nav-item:hover{
+  color: #009eff !important;
+  font-size: 2rem !important;
+}
+/* responsive part */
+.mobile-version {
+  transition: all 1s;
+  z-index: 995;
+  margin-top: -100vh;
+  height: 100vh;
+}
+.btn-close {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+/* modal styles */
+.modal-text {
+  text-align: justify;
+}
+/* =============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 1000px) {
+  .show-search {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #collapse-part {
+    display: none !important;
+  }
+}
+@media only screen and (max-width : 450px){
+  .show-search{
+    width: 280px;
+  }
+}
+/* loading part */
+.loading-image{
+  display: none;
+}

@@ -1,0 +1,219 @@
+@keyframes dynamicBgImgChanger {
+    0% {
+        background-image: url(../img/Geners/electro.jpg);
+    }
+    5% {
+        background-image: url(../img/Geners/electro.jpg);
+    }
+    20% {
+        background-image: url(../img/Geners/relaxing.jpg);
+    }
+    40% {
+        background-image: url(../img/Geners/remix.jpg);
+    }
+    60% {
+        background-image: url(../img/Geners/soundtrack.jpeg);
+    }
+    80% {
+        background-image: url(../img/Geners/phonk.jpg);
+    }
+    100% {
+        background-image: url(../img/Geners/electro.jpg);
+    }
+}
+@keyframes baseBgImgChanger {
+    0% {
+        background-image: url(../img/Geners/relaxing.jpg);
+    }
+    5% {
+        background-image: url(../img/Geners/relaxing.jpg);
+    }
+    20% {
+        background-image: url(../img/Geners/remix.jpg);
+    }
+    40% {
+        background-image: url(../img/Geners/soundtrack.jpeg);
+    }
+    60% {
+        background-image: url(../img/Geners/phonk.jpg);
+    }
+    80% {
+        background-image: url(../img/Geners/electro.jpg);
+    }
+    100% {
+        background-image: url(../img/Geners/relaxing.jpg);
+    }
+}
+.hero {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.hero .hero-paragraphs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    flex-grow: 1;
+}
+.hero .hero-paragraphs .title h2 {
+    font-size: 7rem;
+    margin: 0px 0px 12px 0px;
+    text-shadow: 0px 0px 100px #0b85ff;
+}
+.hero .hero-paragraphs .stable-paragraph p,
+.hero .hero-paragraphs .dynamic-paragraph p {
+    font-size: 1.9rem;
+    margin: 0px 0px 12px 5px;
+    text-shadow: 0px 0px 20px #0b85ff;
+}
+.hero .hero-paragraphs .stable-paragraph p {
+    font-size: 3rem;
+}
+.hero .dynamic-atrist-imgs {
+    width: 35%;
+    position: relative;
+    min-width: 270px;
+    height: 600px;
+    margin: 0 auto;
+}
+.hero .dynamic-atrist-imgs .base-artist-img,
+.hero .dynamic-atrist-imgs .blur-artist-img {
+    position: absolute;
+    width: 76%;
+    height: 75%;
+    border-radius: 50px;
+    box-shadow: 0px 0px 70px #1679AB;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-iteration-count: infinite;
+    animation-duration: 22s;
+    animation-delay: 0s;
+}
+.hero .dynamic-atrist-imgs .base-artist-img {
+    z-index: 1;
+    left: 12%;
+    bottom: 19%;
+    animation-name: dynamicBgImgChanger;
+}
+.hero .dynamic-atrist-imgs .blur-artist-img {
+    filter: blur(4px);
+    opacity: 0.6;
+    z-index: 0;
+    left: 22%;
+    bottom: 14%;
+    animation-name: baseBgImgChanger;
+}
+
+.scroll-container { 
+    display: inline-flex;
+    column-gap: 12px;
+    padding: 18px;
+}
+body {
+    background-color: black;
+  }
+.btn-more {
+  background-color: #009eff !important;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+}
+
+.box{
+    width: 100%;
+    height: 18.5rem;
+}
+.dash{
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.324);
+    padding-bottom: 10px;
+}
+.music-list-child {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 18rem;
+    background-color: #202020;
+    border-radius: 12px;
+}
+.music-list-child .music-list-img {
+    width: 100%;
+    height: 75%;
+    margin-bottom: 12px;
+}
+.music-list-child .music-list-img img {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 12px 12px 0px 0px;
+}
+.music-list-child .music-list-img img, 
+.music-list-child .music-list-img {
+    width: 100%;
+}
+.music-list-child > * {
+    text-align: center;
+}
+.music-list-child .music-list-title {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.music-list-child .music-list-title h3 {
+    font-size: 1.4rem;
+}
+.artist_img{
+    border-radius: 8px;
+    width: 350px;
+    height: 300px;
+}
+.hr{
+    border-color: white;
+    height: 0.5px;
+}
+
+.des_div{
+    border-radius: 10px;
+    background-color: #202020;
+    padding: 18px;
+    margin: 10px;
+}
+@media only screen and (max-width: 1014px){
+    .hero .dynamic-atrist-imgs{
+        min-width: none;
+    }
+    .hero .hero-paragraphs{
+        min-width: none;
+    }
+    
+}
+@media only screen and (max-width: 770px) {
+    .hero .dynamic-atrist-imgs {
+        width: 90%;
+        height: 450px;
+        margin: 0 auto;
+        margin-top: 170px;
+    }
+    .hero .dynamic-atrist-imgs .base-artist-img,
+    .hero .dynamic-atrist-imgs .blur-artist-img{
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 76%;
+        height: 95%;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hero .hero-paragraphs .title h2{
+        font-size: 4.3rem;
+    }
+    .hero .hero-paragraphs .stable-paragraph p{
+        font-size: 1.7rem;
+    }
+    .hero .hero-paragraphs .dynamic-paragraph p{
+        font-size: 1.5rem;
+    }
+}

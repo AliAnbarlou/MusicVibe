@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/No.css'%}">
+{% endblock head %}
+{% block title%}
+    Music Vibe - No Results Found
+{% endblock title%}
+{% block content %}
+    <div class="error-container">
+        <div class="error-child">
+            <div class="error-container-title">
+                <h2>No Results Found</h2>
+            </div><hr>
+            <div class="error-container-paragraph">
+                <p>Sorry, no results were found for your search.</p>
+            </div>
+        </div>
+        <div class="changing-background"></div>
+    </div>
+{% endblock %}

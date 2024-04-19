@@ -1,0 +1,16 @@
+{
+    "disks": [
+      {
+        "name": "musicdisk",
+        "mountTo": "media/audio"
+      },
+      {
+        "name": "imgdisk",
+        "mountTo": "media/images"
+      },
+      {
+        "name": "artistimages",
+        "mountTo": "media/artist_images/"
+      }
+    ]
+}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/indexstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/geners.css' %}" >
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Search - MusicVibe">
+
+{% endblock head %}
+{% block title %}Music Vibe - Search{% endblock title %}
+{% block content %}
+{% if artist_results %}
+<h3 class="text-center">Artists</h3>
+<div class="music-gener-parent">
+    {% for artist in artist_results %}
+    <a href="{% url 'artist_details' artist.id %}" class="music-gener-child">
+        <div class="gener-img">
+            <img src="{{ artist.picture.url }}" alt="{{ artist.name }} music" title="{{ artist.name }}">
+        </div>
+        <div class="gener-title">
+            <h2>{{ artist.name }}</h2>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+    <h3 style='text-align:center;margin-left:auto;margin-right:auto;margin-top:20px;'>No Artist Found For Your Search</h3>
+    <hr>
+{% endif %}
+{% if music_results %}
+<h3 class="text-center">Songs</h3>
+<div class="music-gener-parent">
+    {% for x in music_results %}
+    <a href='{% url "det" x.id %}' class="music-gener-child">
+        <div class="gener-img">
+            <img src="{{ x.image.url }}" alt="{{ x.title }} image" title="{{ x.title }}">
+        </div>
+        <div class="gener-title">
+            <h2>{{x.title}}</h2>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+    <h3 style='text-align:center;margin-left:auto;margin-right:auto;margin-top:20px;'>No Song Found For Your Search</h3>
+{% endif %}
+{% endblock %}

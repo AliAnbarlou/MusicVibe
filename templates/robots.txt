@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /log_in/HelloAdmin/
+
+User-Agent: Googlebot
+User-agent: GPTBot
+Allow: /
+Disallow: /log_in/HelloAdmin/

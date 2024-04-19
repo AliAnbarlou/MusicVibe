@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Music Vibe - Contact us
+{% endblock title %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock head %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-5">Contact us</h1>
+    <form method="POST" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name">Name:</label>
+            <input type="text" name="name" id="id_name" maxlength="30" minlength="3" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="id_email">Email:</label>
+            <input type="email" required name="email" maxlength="50" minlength="4" id="id_email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_comment" required >Comment:</label>
+            <textarea name="comment" id="id_comment" class="form-control" maxlength="3000" minlength="4" placeholder="Type something..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="x()">Submit</button>
+        <a href="http://t.me/a_beckett" target="_blank" rel="noopener noreferrer">
+            <button type="button" class="btn btn-danger" id="bugReportBtn">Bug Report</button>
+        </a>
+    </form>
+</div>
+<script>
+    function x() {
+        window.alert("Your message has been successfully sent");
+    }
+</script>
+
+{% endblock content %}

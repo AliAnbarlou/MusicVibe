@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{y}} Music - MusicVibe{% endblock title %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/indexstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/geners.css' %}" >
+    <meta name="robots" content="follow, index">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://music-vibe.com/genres/">
+    <meta name="description" content="{{y}} Music's in MuiscVibe - Listen to The Real Music">
+    <meta name="keywords" content="{{y}} Music , {{y}} MusicVibe ,{{y}} موزیک وایب , {{y}} Trend">
+    <script>
+        !function(e,t,n){e.yektanetAnalyticsObject=n,e[n]=e[n]||function(){e[n].q.push(arguments)},e[n].q=e[n].q||[];var a=t.getElementsByTagName("head")[0],r=new Date,c="https://cdn.yektanet.com/superscript/WaDFfMQ0/native-music-vibe.com-36997/yn_pub.js?v="+r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),s=t.createElement("link");s.rel="preload",s.as="script",s.href=c,a.appendChild(s);var l=t.createElement("script");l.async=!0,l.src=c,a.appendChild(l)}(window,document,"yektanet");
+    </script>
+{% endblock head %}
+{% block content %}
+{% if posts %}
+    <h2>{{y}} Music</h2>
+    <div class="music-gener-parent">
+        {% for i in postsindb %}
+        <a href="{% url 'det' i.id%}" class="music-gener-child">
+            <div class="gener-img">
+                <img src="{{i.image.url}}" alt="{{ i.title }} music" title="{{ i.title }}">
+            </div>
+            <div class="gener-title">
+                <h2>{{ i.title }}</h2>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% else %}
+    <h3 id="Sorry" style="text-align:center; margin-left:auto;margin-right:auto;font-size:18px;">
+        
+    </h3>
+    <h3 id="Err" style="text-align:center; margin-left:auto;margin-right:auto;font-size:18px;color:red;">
+      
+    </h3>
+    <script>
+        // Get the element by its id
+        const wrongElement = document.getElementById("Sorry");
+        // The text you want to write gradually
+        const text = "Unfortunately, there are currently no posts for this category ({{y}})\nIf you have any suggestions, we will be happy to share your comments with us through the contact us section.\n";
+        // Index to keep track of the current character
+        let index = 0;
+        // Function to gradually write the text
+        const writeTextx = () => {
+          // Check if we have reached the end of the text
+          if (index < text.length) {
+            // Append the next character to the element's innerHTML
+            wrongElement.innerHTML += text.charAt(index);
+            index++;
+            // Call the function again after a delay to continue writing
+            setTimeout(writeTextx, 20); // Adjust the delay as needed (in milliseconds)
+          }
+        }
+        // Start writing the text
+        writeTextx();
+    </script>
+{% endif %}
+
+
+{% endblock content %}

@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/geners.css' %}" >
+    <meta name="robots" content="follow, index">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Music Geners - MusicVibe">
+    <meta property="og:image" content="{% static 'icon/MV-logo.png'%}">
+    <script>
+        !function(e,t,n){e.yektanetAnalyticsObject=n,e[n]=e[n]||function(){e[n].q.push(arguments)},e[n].q=e[n].q||[];var a=t.getElementsByTagName("head")[0],r=new Date,c="https://cdn.yektanet.com/superscript/WaDFfMQ0/native-music-vibe.com-36997/yn_pub.js?v="+r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),s=t.createElement("link");s.rel="preload",s.as="script",s.href=c,a.appendChild(s);var l=t.createElement("script");l.async=!0,l.src=c,a.appendChild(l)}(window,document,"yektanet");
+    </script>
+{% endblock head %}
+{% block title %}Music Vibe - Music Genres{% endblock title %}
+{% block content %}
+    <div class="music-gener-parent">
+        <a href="/all/geners/Pop/" class="music-gener-child">
+
+                <div class="gener-img d-flex align-items-center justify-content-center">
+                    <div>
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <img class="loading-image" src="{% static 'img/Geners/Pop.jpeg' %}" alt="Pop Music Gener" title="Pop">
+                </div>
+                <div class="gener-title">
+                    <h2>Pop</h2>
+                </div>
+        </a>
+        <a href="/all/geners/Rap/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/rap.webp' %}" alt="Rap Music Gener" title="Rap">
+            </div>
+            <div class="gener-title">
+                <h2>Rap</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Rock/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/rock.jpg' %}" alt="Rock Music Gener" title="Rock">
+            </div>
+            <div class="gener-title">
+                <h2>Rock</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Techno/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/techno.jpg' %}" alt="Techno Music Gener" title="Techno">
+            </div>
+            <div class="gener-title">
+                <h2>Techno</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Phonk/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/phonk.jpg' %}" alt="Phonk Music Gener" title="Phonk">
+            </div>
+            <div class="gener-title">
+                <h2>Phonk</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Classic/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/classic.jpg' %}" alt="Classic Music Gener" title="Classic">
+            </div>
+            <div class="gener-title">
+                <h2>Classic</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Jazz/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/jazz.webp' %}" alt="Jazz Music Gener" title="Jazz">
+            </div>
+            <div class="gener-title">
+                <h2>Jazz</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Electronic/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/electro.jpg' %}" alt="Electronic Music Gener" title="Electronic">
+            </div>
+            <div class="gener-title">
+                <h2>Electronic</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Metal/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/metal.webp' %}" alt="Metal Music Gener" title="Metal">
+            </div>
+            <div class="gener-title">
+                <h2>Metal</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Traditional/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/traditional.webp' %}" alt="Traditional Music Gener" title="Traditional">
+            </div>
+            <div class="gener-title">
+                <h2>Traditional</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Remix/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/remix.jpg' %}" alt="Remix Music Gener" title="Remix">
+            </div>
+            <div class="gener-title">
+                <h2>Remix</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Soundtrack/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/soundtrack.jpeg' %}" alt="Soundtrack Music Gener" title="Soundtrack">
+            </div>
+            <div class="gener-title">
+                <h2>Soundtrack</h2>
+            </div>
+        </a>
+        <a href="/all/geners/Relaxing/" class="music-gener-child">
+            <div class="gener-img d-flex align-items-center justify-content-center">
+                <div>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+                                <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </span>
+                        </div>
+                <img class="loading-image" src="{% static 'img/Geners/relaxing.jpg' %}" alt="Relaxing Music Gener" title="Relaxing">
+            </div>
+            <div class="gener-title">
+                <h2>Relaxing</h2>
+            </div>
+        </a>
+    </div>
+{% endblock %}

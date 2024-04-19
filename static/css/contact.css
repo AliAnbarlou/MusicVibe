@@ -1,0 +1,19 @@
+.container {
+    max-width: 600px; /* عرض حداکثری کانتینر */
+    margin: auto; /* مرکز چین کردن کانتینر */
+}
+
+.form-group label {
+    color: #ccc; /* رنگ متن لیبل‌ها */
+}
+
+.form-control {
+    background-color: #333; /* رنگ پس زمینه ورودی‌ها */
+    color: #fff; /* رنگ متن ورودی‌ها */
+    border-color: #666; /* رنگ حاشیه ورودی‌ها */
+}
+
+.btn-primary {
+    background-color: #007bff; /* رنگ پس زمینه دکمه ارسال */
+    border-color: #007bff; /* رنگ حاشیه دکمه ارسال */
+}

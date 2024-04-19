@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/about.css'%}">
+    <script>
+        !function(e,t,n){e.yektanetAnalyticsObject=n,e[n]=e[n]||function(){e[n].q.push(arguments)},e[n].q=e[n].q||[];var a=t.getElementsByTagName("head")[0],r=new Date,c="https://cdn.yektanet.com/superscript/WaDFfMQ0/native-music-vibe.com-36997/yn_pub.js?v="+r.getFullYear().toString()+"0"+r.getMonth()+"0"+r.getDate()+"0"+r.getHours(),s=t.createElement("link");s.rel="preload",s.as="script",s.href=c,a.appendChild(s);var l=t.createElement("script");l.async=!0,l.src=c,a.appendChild(l)}(window,document,"yektanet");
+    </script>
+{% endblock head %}
+{% block title%}
+    Music Vibe - About Us
+{% endblock title%}
+{% block content %}
+<div style="margin-left:auto ;margin-right:auto;">
+    <img src="{% static 'icon/MV-logo.png' %}" class="loading-image" width="80px" height="80px" style="margin: 40px;">
+    <p style="font-size: 28px;font-family: sans-serif;margin-left: auto;margin-right: auto;padding: 40px;">Hello World!<br>
+        Our team started its work in 2024 with the aim of delivering beautiful and spiritual music with the slogan "Listen to The Real Music".
+        Listening to your opinions is useful for us, you can always tell us your opinions in the contact section.</p>
+        <a style="padding: 40px;" href="{% url 'devs' %}">Developers section</a>
+</div>
+{% endblock %}

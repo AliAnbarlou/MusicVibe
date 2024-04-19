@@ -1,0 +1,174 @@
+.music-detail {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 6px auto;
+}
+
+.music-detail__banner {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    object-fit: contain;
+}
+
+.music-caption {
+    margin: 0 auto;
+    
+    background-color: #111;
+    border-radius: 0 0 12px 12px;
+    /* border: 1px solid #333; */
+    border-left: none !important;
+}
+.discription{
+    font-size: 1.3rem;
+}
+.music-topics {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.topic {
+    padding: 3px;
+    color: #41c9E2 !important;
+    background-color: #1a2044;
+    border-radius: 6px;
+}
+
+.music {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.lyric {
+    margin: 24px auto;
+}
+
+.lyrics__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lyric__label {
+    display: inline;
+    background-color: #ccc;
+    color: #0e0e0e;
+    padding: 12px;
+    border-radius: 12px 12px 0px 0px;
+    margin: 0px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.lyric__txt {
+    width: 100%;
+    padding: 12px;
+    background-color: #0e0e0e;
+    border: 1px solid #181818;
+    text-align: center;
+    border-radius: 0px 0px 12px 12px;
+    font-size: 1.6rem;
+    font-style: italic;
+    color: #ccc;
+}
+/* Style for the heart button */
+    .heart-button {
+      display: inline-block;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+  
+    /* Style for the heart SVG */
+    .heart-svg {
+      width: 3em; /* Adjust size as needed */
+      height: 3em; /* Adjust size as needed */
+      fill: #ff0000; /* Red color */
+    }
+    .share-button {
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+  /* Style for the share SVG */
+  .share-svg {
+    width: 3em; /* Adjust size as needed */
+    height: 3em; /* Adjust size as needed */
+    fill: #007bff; /* Blue color */
+    }
+@media screen and (max-width: 768px) {
+    .discription{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    main {
+        width: 100%;
+    }
+    .music-detail {
+        width: 95%;
+        margin-inline: auto;
+    }
+    .music-detail__banner {
+        width: 100%;
+        border-radius: 12px 12px 0px 0px;
+    }
+    .music-caption {
+        border-radius: 0px 0px 12px 12px;
+        border-left: 1px solid #333;
+        border-top: none;
+    }
+}
+/* comment form styles */
+.comment-form {
+    color: #fff;
+    background-color: #222831;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px #5BBCFF;
+    margin: 80px auto;
+}
+
+.comment-form h2 {
+    margin-bottom: 20px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    color: #fff;
+    background-color: #31363F;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #5BBCFF;
+    border-radius: 4px;
+    outline: none;
+}
+.comment-form input::placeholder{
+    color: rgb(168, 168, 168);
+}
+.comment-form textarea::placeholder{
+    color: rgb(168, 168, 168);
+}
+.comment-form button {
+    background-color: #5BBCFF;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.comment-form button:hover {
+    background-color: #3887BE;
+}

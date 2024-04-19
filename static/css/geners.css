@@ -1,0 +1,63 @@
+.music-gener-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-inline: 12px;
+    margin-block: 18px;
+    gap: 20px;
+}
+.music-gener-parent .music-gener-child {
+    width: calc(100% / 5);
+    background-color: #222222;
+    height: 21rem;
+    border-radius: 12px;
+    transition: 0.5s;
+}
+.music-gener-parent .music-gener-child:hover {
+    background-color: #009eff;
+    transform: scale(1.025, 1.025);
+}
+.music-gener-parent .zoom-out {
+    object-fit: contain !important;
+}
+.music-gener-parent .music-gener-child .gener-img,
+.music-gener-parent .music-gener-child .gener-img img {
+    width: 100%;
+}
+.music-gener-parent .music-gener-child .gener-img {
+    height: 84%;
+    margin-bottom: 7px;
+}
+.music-gener-parent .music-gener-child .gener-img img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+}
+.music-gener-parent .music-gener-child .gener-title h2 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+hr{
+    border-color:gray;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 2px;
+}
+@media only screen and (max-width: 425px) {
+    .music-gener-parent .music-gener-child {
+        width: 100% !important;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .music-gener-parent .music-gener-child {
+        width: 48%;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024) {
+    .music-gener-parent .music-gener-child {
+        width: calc(100% / 4.2);
+    }
+}

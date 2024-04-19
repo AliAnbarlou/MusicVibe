@@ -1,0 +1,401 @@
+* {
+  color: #ffffff;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* cursor: url("https://i.stack.imgur.com/inwsy.png"), pointer; */
+  transition: 0.5s;
+}
+*::selection {
+  background-color: #1e90ff;
+}
+li{
+  list-style-type: none !important;
+}
+.yn-info{
+  color:black;
+}
+.yn-title{
+  color:black
+}
+.yn-title span{
+  color:black
+}
+.yn-sticky-title , .yn-sticky-title span{
+  color:black;
+}
+#yn-article-text-95676 , .yn-content , .yn-item vertical yn-clearfix{
+  background-color: white;
+  color:black;
+  margin:10px;
+  padding: 5px;
+}
+#yn-close{
+  background-color: black;
+}
+
+#pos-article-text-95676{
+  border-radius: 30px;
+  margin: 15px;
+}
+.are{
+  background-color: white;
+  border-radius: 10px;
+  margin: 50px;
+}
+body {
+  font-size: 1rem;
+  margin: 0px;
+  background-color: #222222;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #0080ff;
+}
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+header,
+footer {
+  padding: 12px 8px;
+  display: flex;
+  align-items: center;
+}
+header .header-item,
+footer .footer-item {
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.logo-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0px 0px 6px 7px;
+}
+header img,
+footer img,
+footer .footer-detail {
+  width: 100%;
+}
+
+/* Header StyleSheet Start */
+
+header {
+  position: sticky;
+  top: 0px;
+}
+header .musicvibe-logo .musicvibe-logo-img {
+  width: 10%;
+}
+header nav ul li {
+  display: inline;
+  padding: 10px 8px;
+  margin: 0px 4px;
+}
+header .musicvibe-search-data {
+  position: relative;
+}
+header .musicvibe-search-data .search-icon {
+  background-color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+}
+header .musicvibe-search-data .search-icon:hover {
+  background-color: #a8a8a8;
+}
+header .musicvibe-search-data .search-icon:active {
+  transform: scale(1.07, 1.07);
+}
+header .musicvibe-search-data .musicvibe-search-bar {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 36%;
+  z-index: 0;
+  transform: scaleX(0);
+  opacity: 0;
+}
+header .musicvibe-search-data .musicvibe-search-bar input {
+  width: 90%;
+  background-color: transparent;
+  padding: 8px 10px 8px 25px;
+  border: 1px solid #e4e4e4c5;
+  outline: none;
+  z-index: 0;
+}
+header .musicvibe-search-data .musicvibe-search-bar input:focus {
+  box-shadow: 0px 0px 4px #b9b9b9;
+}
+header .musicvibe-search-data .musicvibe-search-bar input::placeholder {
+  text-align: center;
+}
+header .musicvibe-search-data .musicvibe-search-bar .search-btn {
+  flex-grow: 1;
+  padding: 8px 10px;
+  background-color: #1e90ff;
+  border: 1px solid #1e90ff;
+  border-radius: 0px 9px 9px 0px;
+}
+header .musicvibe-mobile-nav-icon {
+  display: none;
+}
+header .musicvibe-mobile-nav-icon button,
+.mobile-nav .close-btn {
+  background-color: transparent;
+  padding: 8px;
+  border: none;
+}
+li > a{
+  text-decoration: none;
+  font-size: larger;
+  margin-top: 20px;
+}
+/* Header StyleSheet End */
+
+/* Mobile Nav StyleSheet Start */
+
+.mobile-nav {
+  position: fixed;
+  padding: 12px 8px;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 30vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #222222;
+  transform: scale(1, 0);
+}
+.mobile-nav .close-btn {
+  float: right;
+}
+.mobile-nav-item {
+  height: calc(100% / 3);
+}
+.mobile-nav .musicvibe-search-data {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+}
+.mobile-nav .musicvibe-search-data .search-icon {
+  position: absolute;
+  left: 42.5%;
+  padding: 12px;
+  border-radius: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.mobile-nav .musicvibe-search-data .musicvibe-search-bar {
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: scale(0, 0);
+}
+.mobile-nav .musicvibe-search-data .musicvibe-search-bar input {
+  flex-grow: 6;
+  background-color: transparent;
+  padding: 8px 10px 8px 25px;
+  border: 1px solid #e4e4e4c5;
+  outline: none;
+  z-index: 0;
+}
+.mobile-nav .musicvibe-search-data .musicvibe-search-bar input::placeholder {
+  text-align: center;
+}
+.mobile-nav .musicvibe-search-data .musicvibe-search-bar input:focus {
+  box-shadow: 0px 0px 4px #b9b9b9;
+}
+.mobile-nav .musicvibe-search-data .musicvibe-search-bar .search-btn {
+  flex-grow: 1;
+  padding: 8px 10px;
+  background-color: #1e90ff;
+  border: 1px solid #1e90ff;
+  border-radius: 0px 9px 9px 0px;
+}
+
+/* Mobile Nav StyleSheet End */
+
+/* Footer StyleSheet Start */
+
+footer {
+  flex-direction: column;
+  background: linear-gradient(to top, #111111, #010101);
+}
+footer .footer-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+footer .footer-detail .footer-item {
+  flex-grow: 1;
+  text-align: center;
+}
+footer .footer-about-us {
+  flex-direction: column;
+}
+footer .footer-about-us .musicvibe-logo {
+  width: 12%;
+  padding-bottom: 8px;
+}
+footer .footer-about-us .musicvibe-about-us {
+  width: 30%;
+  border-top: 1px solid #e4e4e41c;
+  padding-top: 12px;
+}
+footer .social-medias {
+  display: inline-flex;
+}
+footer .social-medias .icon-link {
+  padding: 5px;
+}
+footer .social-medias .icon-link:first-child {
+  margin-left: auto;
+}
+footer .social-medias .icon-link:last-child {
+  margin-right: auto;
+}
+footer .social-medias .icon-link a svg {
+  fill: #ffffff;
+}
+footer .social-medias .icon-link a svg:hover {
+  fill: #1e90ff;
+}
+footer .copyright-txt {
+  width: 82%;
+  padding-top: 18px;
+  text-align: center;
+  border-top: 1px solid #a8a8a827;
+  margin-top: 25px;
+}
+
+/* Footer StyleSheet End */
+
+@media only screen and (max-width: 425px) {
+  header nav,
+  header nav ul,
+  header .musicvibe-search-data {
+    display: none !important;
+    width: 0%;
+  }
+  header .musicvibe-mobile-nav-icon {
+    display: block;
+  }
+  header .musicvibe-logo {
+    justify-content: start;
+  }
+  header .musicvibe-logo .musicvibe-logo-title span {
+    font-size: 2.3rem !important;
+  }
+  header .musicvibe-logo .musicvibe-logo-img {
+    width: 15% !important;
+  }
+  footer li {
+    padding: 2px 0px;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+  footer .footer-detail {
+    flex-direction: column;
+  }
+  footer .footer-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  footer .footer-item .musicvibe-logo {
+    width: 22%;
+  }
+  footer .footer-item .musicvibe-about-us {
+    width: 82%;
+  }
+  footer .copyright-txt {
+    margin-top: 4px;
+  }
+}
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  ul li a {
+    font-size: 1.15rem;
+  }
+  header nav,
+  header nav ul,
+  header .musicvibe-search-data {
+    display: none !important;
+    width: 0%;
+  }
+  header .musicvibe-mobile-nav-icon {
+    display: block;
+  }
+  header .musicvibe-logo {
+    justify-content: start;
+  }
+  header .musicvibe-logo .musicvibe-logo-title span {
+    font-size: 2.8rem;
+  }
+  header .musicvibe-logo .musicvibe-logo-img {
+    width: 8%;
+  }
+  .mobile-nav {
+    display: flex;
+  }
+  footer li {
+    padding: 2px 0px;
+  }
+  footer .footer-detail {
+    flex-direction: column;
+  }
+  footer .footer-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  footer .footer-item .musicvibe-logo {
+    width: 10%;
+  }
+  footer .footer-item .musicvibe-about-us {
+    width: 82%;
+  }
+  footer .copyright-txt {
+    margin-top: 4px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  header .musicvibe-logo .musicvibe-logo-img {
+    width: 13%;
+  }
+  header .musicvibe-logo .musicvibe-logo-title span {
+    font-size: 2.2rem;
+  }
+  header .musicvibe-search-data .search-icon {
+    padding: 11px;
+  }
+  header .musicvibe-search-data .search-icon svg {
+    width: 20px;
+  }
+  header .musicvibe-search-data .musicvibe-search-bar {
+    left: 30%;
+  }
+}
+p , h2, h3, h4, h5, h6{
+  margin-left: 10px;
+  padding-right: 10px;
+}

@@ -1,0 +1,42 @@
+.artist-detail {
+    flex-flow: row wrap !important;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: radial-gradient(circle, #10203e, #000000);
+}
+
+.artist-detail__banner {
+    width: 22rem;
+    height: 22rem;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.artist-caption {
+    flex-grow: 1;
+    padding: 2rem;
+    flex-direction: column;
+    margin-bottom: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .artist-detail {
+        padding: 0.8rem 1.2rem;
+    }
+    .artist-detail__banner {
+        width: 14rem;
+        height: 14rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .artist-detail {
+        padding: 0.5rem;
+    }
+    .artist-detail__banner {
+        width: 305px;
+        height: 305px;
+        flex-grow: 1;
+        border-radius: 8px 8px 0px 0px;
+    }
+}

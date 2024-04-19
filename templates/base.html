@@ -1,0 +1,235 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- lightSlider -->
+    <link rel="stylesheet" href="{% static 'library/lightslider.min.css' %}" />
+    <!-- bootstrap -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+    />
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <link rel="shortcut icon" href="{% static 'icon/MV-logo.png'%}" type="image/x-png">
+    <title>{% block title %}{% endblock title %}</title>
+    {% block head %}
+    
+    {% endblock head %}
+  </head>
+  <body>
+  <!-- navbar -->
+  <header class="w-100 mt-2 bg-black">
+    <nav
+      class="d-flex flex-row justify-content-around w-100 align-items-center navbar navbar-expand-md"
+    >
+      <!-- logo -->
+      <a href="{% url 'Home'%}" class="logo">
+        <div class="d-flex flex-row align-items-center">
+          <div class=" musicvibe-logo-img">
+            <img id="logo" src="{% static 'icon/MV-logo.png'%}" alt="Logo">
+          </div>
+          <div class="musicvibe-logo-title">
+            <h1>MusicVibe</h1>
+          </div>
+          
+        </div>
+      </a>
+      <!-- actions -->
+      <div
+        class="d-flex flex-row align-items-center justify-content-center"
+        id="collapse-part"
+      >
+        <ul
+          class="list-unstyled d-flex flex-row justify-content-around align-items-center gap-4 navbar-nav"
+        >
+          <li class="nav-item"><a href="{% url 'Home'%}">Home</a></li>
+          <li class="nav-item"><a href="{% url 'all_page'%}">Musics</a></li>
+          <li class="nav-item"><a href="{% url 'geners'%}">Genres</a></li>
+        </ul>
+      </div>
+      <!-- search -->
+      <div class="contain w-auto" id="search-desktop">
+        <form
+          action="{% url 'search' %}" method="post" class="search" id="search-bar">
+          {% csrf_token%}
+          <input
+            type="search"
+            placeholder="Artist , Music , etc"
+            name="q"
+            class="search__input"
+            maxlength="100" minlength="2"
+          />
+          <div
+            class="search__button"
+            onclick="toggleSearch()"
+            id="search-button"
+          >
+            <span class="search__icon d-flex align-items-center justify-content-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+            </span>
+            <span class="search__close d-flex align-items-center justify-content-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-x" viewBox="0 0 16 16">
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+              </svg>
+            </span>
+          </div>
+        </form>
+      </div>
+      <!-- responsive nav button-->
+      <button class="navbar-toggler" id="mobile-items" onclick="collapse()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </header>
+  <!-- responsive part start -->
+  <div
+    class="mobile-version position-fixed top-0 start-0 end-0 bottom-0 d-flex w-100 bg-black opacity-100 justify-content-center"
+  >
+    <div
+      class="bg-black position-relative d-flex flex-column justify-content-center align-items-center gap-4 fs-4"
+      style="width: 100%; height: auto"
+    >
+      <button
+        class="btn-close"
+        style="z-index: 300"
+        onclick="closenav()"
+      ></button>
+      <div class="search-mobile d-none">
+        <div class="contain w-auto">
+          <form
+            action="{% url 'search' %}" method="post" class="search" id="search-br">
+            {% csrf_token%}
+            <input
+              type="search"
+              placeholder="Artist, Music , etc..."
+              name="q"
+              class="search__input"
+            />
+            <div
+              class="search__button"
+              onclick="toggleSearchMob()"
+              id="search-btn"
+            >
+              <span class="search__icon d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+              </span>
+              <span class="search__close d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-x" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div><a href="{% url 'Home'%}" class="nav-item text-light">Home</a></div>
+      <div><a href="{% url 'all_page'%}" class="nav-item text-light">Musics</a></div>
+      <div><a href="{% url 'geners'%}" class="nav-item text-light">Genres</a></div>
+    </div>
+  </div>
+  <!-- responsive part end -->
+  <br>
+  <!--Main-->
+      <main>
+        {% block content%}
+
+        {% endblock content%}
+      </main>
+
+
+
+    <!--Footer Start-->
+    <footer class=" w-100">
+      <br><br><br>
+      <div class="footer-detail">
+        <div class="footer-about-us footer-item">
+          <div class="musicvibe-logo">
+            <img
+              src="{% static 'icon/MV-logo.png' %}"
+              alt="MusicVibe"
+              title="MusicVibe"
+            />
+          </div>
+          <div class="musicvibe-about-us">
+            <ul>
+              <li><a href="{% url 'About' %}" target="_blank">About Us</a></li>
+              <li><a href="{% url 'Contact' %}" target="_blank">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="musicvibe-artist footer-item">
+          <ul>
+            <li><a href="{% url 'geners'%}">Genres</a></li>
+            <li><a href="/all/geners/Pop">Pop</a></li>
+            <li><a href="/all/geners/Classic">Classic</a></li>
+          </ul>
+        </div>
+        <div class="social-medias footer-item">
+          <div class="github-link icon-link">
+            <a href="https://github.com/alianbarlou/MusicVibe" target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                fill="#222222"
+                class="bi bi-github"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                /></svg
+            ></a>
+          </div>
+          <div class="telegram-link icon-link">
+            <a href="https://t.me/Music_VaibIR" target="_blank"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                fill="#222222"
+                class="bi bi-telegram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+                /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-txt">
+        <span>1402-1403</span>
+      </div>
+    </footer>
+    <!--Footer End-->
+
+
+
+
+    
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- light slider -->
+    <script src="{% static 'library/lightslider.min.js' %}"></script>
+    <!-- bootstrap -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+    ></script>
+    <!-- loading image js -->
+    <script src="{% static 'js/loading.js' %}"></script>
+    <!-- app js -->
+    <script src="{% static 'js/app.js' %}"></script>
+    <!--=============== MAIN JS ===============-->
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

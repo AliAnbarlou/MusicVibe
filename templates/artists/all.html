@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/geners.css' %}" >
+    <meta name="robots" content="follow, index">
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="All Artists - MusicVibe">
+{% endblock head %}
+{% block title %}Music Vibe - All Artists{% endblock title %}
+{% block content %}
+<div class="music-gener-parent">
+    {% for i in artist_results %}
+        <a href='{% url "artist_details" i.id%}' class="music-gener-child">
+            <div class="gener-img">
+                <img src="{{i.picture.url}}" alt="{{i.name}}" title="{{i.name}}">
+            </div>
+            <div class="gener-title">
+                <h2>{{i.name}}</h2>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

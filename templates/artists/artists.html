@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/geners.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/artist.css' %}" >
+    <meta property="og:locale" content="fa_IR">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Search - MusicVibe">
+    <meta name="robots" content="follow, index">
+{% endblock head %}
+{% block title %}Artist {{ artist.name }} - Music Vibe{% endblock title %}
+{% block content %}
+<section class="artist-detail d-flex">
+    <img class="artist-detail__banner" src="{{ artist.picture.url }}" alt="{{ artist.name }}" title="{{ artist.name }}" >
+    <div class="artist-caption h-100 d-flex">
+        <h2 class="artist-caption__title">{{ artist.name }}'s Music</h2>
+        <p class="artist-caption__par">{{artist.biography}}</p>
+    </div>
+</section>
+<hr>
+{% if artist_songs %}
+<div class="music-gener-parent">
+    {% for music in artist_songs %}
+    <a href='{% url "det" music.id %}' class="music-gener-child">
+        <div class="gener-img">
+            <img src="{{ music.image.url }}" alt="{{ music.title }} image" title="{{ music.title }}">
+        </div>
+        <div class="gener-title">
+            <h2>{{ music.title }}</h2>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% else %}
+    <h3 style='text-align:center;margin-left:auto;margin-right:auto;margin-top:20px;'>No Songs Found For This Artist</h3>
+{% endif %}
+{% endblock content %}

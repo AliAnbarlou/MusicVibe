@@ -1,0 +1,97 @@
+.chrt_flex{
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.944);
+    margin: 100px;
+    color:black;
+    padding: 10px;
+    font-size: larger;
+}
+.login-logo{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.login-logo h1{
+    width: 30%;
+    text-align: center;
+}
+.login-logo h1 picture img {
+    width: 100%;
+}
+.btn-block{
+    width: 100% !important;
+}
+.stateform{
+    padding: 25px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.stateform text{
+    font-size: 20px;
+    font-weight: bold;
+}
+.chrt_flex a{
+    color:skyblue;
+}
+.chrt_flex h3{
+    color:black;
+    margin: 15px;
+}
+#load_on_change{
+    width: 55px;
+}
+input[type="date"]{
+    background-color: white;
+    color:black;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.chart-input{
+    background-color: white;
+    color:black;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px black;
+}
+select{
+    background-color: white;
+    color:black;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px black;
+}
+.content a {
+    transition: all 0.8s;
+}
+.content a:hover{
+    font-size:16px;
+    text-decoration: none;
+}
+button{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    font-weight: 400;
+}
+.btn-primary{
+    width: 50px;
+}
+#id_body , #id_title , #id_tags{
+    background-color: #252525;
+    color:white;
+}
+#id_body{
+    height: 105%;
+}
+select{
+    background-color: black !important;
+}
+option , #id_user_permissions_from{
+    background-color: black !important;
+}
+.field-picture{
+    width: 100%;
+    text-align: center;
+}

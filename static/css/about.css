@@ -1,0 +1,83 @@
+a {
+    text-decoration: none;
+}
+.creators-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 18px;
+}
+.creators-container .creators-row {
+    width: 48%;
+    height: 18rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #141414;
+    border-radius: 8px;
+}
+.creators-container .creators-row .creator-img {
+    width: 32%;
+    height: 100%;
+}
+.creators-container .creators-row .creator-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 0px 0px 8px;
+}
+.creators-container .creators-row .creator-detail {
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
+    padding: 18px 22px;
+    border: 0.5px solid #40404077;
+    border-left: none;
+    border-radius: 0px 8px 8px 0px;
+}
+.creators-container .creators-row .creator-detail .creator-name h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0px 0px 8px 0px;
+}
+.creators-container .creators-row .creator-detail .creator-paragraph p {
+    margin: 0px 0px 8px 0px;
+    padding: 0px;
+}
+
+@media only screen and (max-width: 425px) {
+    .creators-container .creators-row {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        border: 0.5px solid #40404077;
+        border-top: none;
+    }
+    .creators-container .creators-row .creator-img {
+        width: 100%;
+        height: 25rem;
+    }
+    .creators-container .creators-row .creator-img img {
+        border-radius: 8px 8px 0px 0px;
+    }
+    .creators-container .creators-row .creator-detail {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 0px 0px 8px 8px;
+    }
+    .creators-container .creators-row .creator-detail .creator-name h3 {
+        font-size: 1.8rem;
+    }
+    .creators-container .creators-row .creator-detail .creator-paragraph p {
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+    .creators-container .creators-row {
+        width: 100%;
+    }
+}
